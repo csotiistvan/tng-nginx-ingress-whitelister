@@ -1,5 +1,7 @@
 from kubernetes import client, config
 
+config.load_incluster_config()
+
 api_instance = client.CoreV1Api()
 cmap = client.V1ConfigMap()
 
