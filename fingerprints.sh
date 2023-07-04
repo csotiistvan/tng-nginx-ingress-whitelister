@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nginx_conf = "$1/nginx_conf"
+nginx_conf="$1/nginx_conf"
 
 echo 'map $ssl_client_fingerprint $reject {' >> $nginx_conf
 echo "default 0;" >> $nginx_conf
