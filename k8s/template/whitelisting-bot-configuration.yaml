@@ -14,5 +14,5 @@ data:
     git clone $certificateFolder certificateFolder 
     pip install -r /bot/requirements.txt > /dev/null
     ./bot/fingerprints.sh ./../certificateFolder
-    python /bot/updateFingerprints.py nginx_conf
+    python /bot/updateFingerprints.py ./../certificateFolder/nginx_conf
     python /bot/updateCaBundle.py /certificateFolder
