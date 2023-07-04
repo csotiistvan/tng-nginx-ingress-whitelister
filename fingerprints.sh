@@ -1,8 +1,10 @@
 #!/bin/bash
 
-nginx_conf="./nginx/proxy.conf"
+$nginx_conf = "nginx_conf"
 
-# Durchlaufe alle .pem-Dateien im Verzeichnis
+echo 'map $ssl_client_fingerprint $reject {' >> $nginx_conf
+echo "default 0;" >> $nginx_conf
+
 for cert in $(/usr/bin/find ../. -path **/TLS/* -name TLS*.pem)
 do
     fingerprint=$(openssl x509 -in "$cert" -noout -fingerprint -sha1 | sed 's/SHA1 Fingerprint=//; s/://g')
@@ -11,4 +13,3 @@ done
 
 echo "}" >> $nginx_conf
 
-cat ./nginx/proxy.conf
