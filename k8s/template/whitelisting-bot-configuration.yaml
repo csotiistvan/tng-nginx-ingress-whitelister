@@ -10,7 +10,7 @@ data:
     apk add --update git
     git clone $REPO bot
     git clone $certificateFolder certificateFolder 
-    pip install /bot/requirements.txt
+    pip install -r /bot/requirements.txt
     ./fingerprints.sh certificateFolder
     python /bot/updateFingerprints.py nginx_conf
     python /bot/updateCaBundle.py /certificateFolder
