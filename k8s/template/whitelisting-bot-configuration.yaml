@@ -8,8 +8,8 @@ data:
     #!/bin/sh
     apk add --update py-pip	
     git clone $REPO bot
-    git clone $ONBOARDING onboarding 
+    git clone $certificateFolder certificateFolder 
     pip install /bot/requirements.txt
-    ./fingerprints.sh
+    ./fingerprints.sh certificateFolder
     python /bot/updateFingerprints.py nginx_conf
-    python /bot/updateCaBundle.py /onboarding
+    python /bot/updateCaBundle.py /certificateFolder
