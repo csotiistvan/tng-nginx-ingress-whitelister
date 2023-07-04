@@ -7,7 +7,7 @@ data:
   script.sh: |
     #!/bin/sh
     apk add --update py-pip	
-    git clone $REPO
-    pip install requirements.txt
-    python updateFingerprints.py
-    python updateCaBundle.py
+    git clone $REPO /repo
+    pip install /repo/requirements.txt
+    python /repo/updateFingerprints.py
+    python /repoupdateCaBundle.py
