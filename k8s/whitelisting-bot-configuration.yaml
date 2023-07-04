@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: whitelisting-bot-config
+  namespace: default
+data:
+  script.sh: >
+    #!/bin/sh
+    apk add --update py-pip	
+    git clone $REPO
+    pip install requirements.txt
+    python updateFingerprints.py
+    python updateCaBundle.py
