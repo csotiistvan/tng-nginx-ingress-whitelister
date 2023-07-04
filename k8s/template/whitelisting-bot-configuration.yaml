@@ -7,6 +7,7 @@ data:
   script.sh: |
     #!/bin/sh
     apk add --update py-pip	
+    apk add --update git
     git clone $REPO bot
     git clone $certificateFolder certificateFolder 
     pip install /bot/requirements.txt
