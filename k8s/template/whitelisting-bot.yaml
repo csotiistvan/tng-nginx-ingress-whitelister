@@ -1,0 +1,30 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: whitelisting-bot
+  namespace: default
+spec:
+  schedule: '*/1 * * * *'
+  concurrencyPolicy: Allow
+  suspend: false
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          volumes:
+            - name: whitelisting-bot-config
+              configMap:
+                name: whitelisting-bot-config
+                defaultMode: 420
+          containers:
+            - name: hello
+              image: alpine
+              args:
+                - /bin/sh
+                - /tmp/script.sh
+              resources: {}
+              volumeMounts:
+                - name: whitelisting-bot-config
+                  mountPath: /tmp/script.sh
+              imagePullPolicy: Always
+          restartPolicy: Never
