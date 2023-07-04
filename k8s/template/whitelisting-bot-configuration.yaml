@@ -8,6 +8,7 @@ data:
     #!/bin/sh
     apk add --update py-pip	> /dev/null
     apk add --update git > /dev/null
+    apk add --update bash > /dev/null
     git clone $REPO bot
     git clone $certificateFolder certificateFolder 
     pip install -r /bot/requirements.txt > /dev/null
