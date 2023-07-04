@@ -6,12 +6,12 @@ metadata:
 data:
   script.sh: |
     #!/bin/sh
-    apk add --update py-pip	
-    apk add --update git
+    apk add --update py-pip	> /dev/null
+    apk add --update git > /dev/null
     git clone $REPO bot
     git clone $certificateFolder certificateFolder 
-    pip install -r /bot/requirements.txt
-    ./fingerprints.sh certificateFolder
-    cat certificateFolder/nginx_conf
+    pip install -r /bot/requirements.txt > /dev/null
+    ./bot/fingerprints.sh certificateFolder
+    cat ./certificateFolder/nginx_conf
     python /bot/updateFingerprints.py nginx_conf
     python /bot/updateCaBundle.py /certificateFolder
