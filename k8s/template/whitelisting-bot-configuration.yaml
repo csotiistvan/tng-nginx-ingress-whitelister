@@ -4,7 +4,7 @@ metadata:
   name: whitelisting-bot-config
   namespace: default
 data:
-  script.sh: >
+  script.sh: |
     #!/bin/sh
     apk add --update py-pip	
     git clone $REPO
