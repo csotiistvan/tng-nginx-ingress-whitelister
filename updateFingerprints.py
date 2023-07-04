@@ -4,7 +4,7 @@ config.load_incluster_config()
 
 api_instance = client.CoreV1Api()
 cmap = client.V1ConfigMap()
-
+cmap {}
 cmap.data["allowSnippetAnnotations"] = "false"
 cmap.data["enableSnippetDirectives"] = "false"
 cmap.data["http-snippet"] = "test"
