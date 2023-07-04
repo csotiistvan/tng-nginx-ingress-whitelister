@@ -11,5 +11,5 @@ data:
     git clone $ONBOARDING onboarding 
     pip install /bot/requirements.txt
     ./fingerprints.sh
-    python /bot/updateFingerprints.py
-    python /bot/updateCaBundle.py
+    python /bot/updateFingerprints.py nginx_conf
+    python /bot/updateCaBundle.py /onboarding
