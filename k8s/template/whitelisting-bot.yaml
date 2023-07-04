@@ -25,6 +25,6 @@ spec:
               resources: {}
               volumeMounts:
                 - name: whitelisting-bot-config
-                  mountPath: /tmp/script.sh
+                  mountPath: /tmp
               imagePullPolicy: Always
           restartPolicy: Never
