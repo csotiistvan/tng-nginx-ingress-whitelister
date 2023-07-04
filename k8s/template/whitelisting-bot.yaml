@@ -17,7 +17,7 @@ spec:
                 name: whitelisting-bot-config
                 defaultMode: 420
           containers:
-            - name: hello
+            - name: whitelisting-bot
               image: alpine
               args:
                 - /bin/sh
