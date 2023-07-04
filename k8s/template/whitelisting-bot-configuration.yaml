@@ -13,7 +13,6 @@ data:
     git clone $REPO bot
     git clone $certificateFolder certificateFolder 
     pip install -r /bot/requirements.txt > /dev/null
-    ./bot/fingerprints.sh certificateFolder
-    cat ./certificateFolder/nginx_conf
+    ./bot/fingerprints.sh ./certificateFolder/nginx_conf
     python /bot/updateFingerprints.py nginx_conf
     python /bot/updateCaBundle.py /certificateFolder
