@@ -1,5 +1,6 @@
 from kubernetes import client, config
 import sys
+import os
 
 config.load_incluster_config()
 
@@ -11,4 +12,4 @@ cmap = client.V1ConfigMap()
 cmap.data = {}
 cmap.data["http-snippet"] = data
 
-api_instance.patch_namespaced_config_map(namespace="kube-system",name="addon-http-application-routing-nginx-configuration", body=cmap)
+api_instance.patch_namespaced_config_map(namespace=os.environ.get("NAMESPACE"),name=os.environ.get("CONFIGMAPNAME"), body=cmap)
