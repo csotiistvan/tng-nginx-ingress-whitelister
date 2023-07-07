@@ -12,7 +12,7 @@ ingress = api_instance.read_namespaced_ingress(name=ingress_name,namespace=ingre
 
 if ingress:
    ingress["metadata"]["annotations"]["nginx.ingress.kubernetes.io/server-snippet"] = "if ($reject) { return 403; }"
-   api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, ingress)
+   api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
   
 
 
