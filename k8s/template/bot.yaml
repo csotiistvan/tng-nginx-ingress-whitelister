@@ -19,6 +19,9 @@ spec:
           containers:
             - name: {{ .Release.Name }}-bot
               image: alpine
+              env: 
+                TAG: {{ .Values.config.tag }}
+                REPO: {{ .Values.config.repo }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
