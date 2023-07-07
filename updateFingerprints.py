@@ -9,13 +9,14 @@ with open(sys.argv[1]) as f:
 
 config_namespace = os.environ.get("CONFIG_NAMESPACE")
 config_name=os.environ.get("CONFIG_MAP")
+config_seperator=os.environ.get("SEPERATOR")
 
 if not config_namespace or not config_name:
     print("Config Namespace or Config Map not configured")
 else: 
     api_instance = client.CoreV1Api()
     cmap = api_instance.read_namespaced_config_map(name=config_name, namespace=config_namespace)
-    seperator = "# WHITELIST"
+    seperator = config_seperator
     newBlock = "\n"+ seperator +"\n" + data + seperator+"\n"
     if "http-snippet" in cmap.data:
         existingconfig = cmap.data["http-snippet"]
