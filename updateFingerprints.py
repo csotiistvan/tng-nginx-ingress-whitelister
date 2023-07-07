@@ -21,7 +21,10 @@ else:
     if "http-snippet" in cmap.data:
         existingconfig = cmap.data["http-snippet"]
         map = existingconfig.split(seperator)
-        cmap.data["http-snippet"] = map[0].strip()+ newBlock + map[2].strip()
+        if len(map) == 3
+          cmap.data["http-snippet"] = map[0].strip()+ newBlock + map[2].strip()
+        else: 
+           cmap.data["http-snippet"] = existingconfig + newBlock
     else:
         cmap.data["http-snippet"] = newBlock
         
