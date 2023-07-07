@@ -21,7 +21,7 @@ if len(files) and ca_bundle:
   api_instance = client.CoreV1Api()
   body = client.V1Secret()
   body.api_version = 'v1'
-  body.data = {'ca.crt': str(b'hello', base64.b64encode(bytes(ca_bundle,"utf-8")),"utf-8")}
+  body.data = {'ca.crt': str(base64.b64encode(bytes(ca_bundle,"utf-8")),"utf-8")}
   body.kind = 'Secret'
   body.type = 'Opaque'
   api_instance.patch_namespaced_secret(namespace=bundle_namespace,name=bundle_name, body=body)
