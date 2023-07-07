@@ -9,9 +9,9 @@ spec:
   suspend: false
   jobTemplate:
     spec:
-      template:
-        serviceAccountName: {{ .Release.Name }}-ingress-controller-service-account
+      template: 
         spec:
+          serviceAccountName: {{ .Release.Name }}-ingress-controller-service-account
           volumes:
             - name: {{ .Release.Name }}-bot-config
               configMap:
