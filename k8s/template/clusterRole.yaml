@@ -25,5 +25,5 @@ rules:
         "authorization.k8s.io",
       ]
     resources: ["configmaps"]
-    resourceNames: [{{ .Values.config.name}}]
+    resourceNames: [{{ .Values.config.map}}]
     verbs: ["get", "watch", "list", "create", "delete", "patch"]
