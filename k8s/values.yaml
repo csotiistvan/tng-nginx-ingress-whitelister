@@ -1,6 +1,8 @@
 config:
   map: addon-http-application-routing-nginx-configuration
-ingress:
-  selector: whitelist-rule
 bundle:
   name: ca-bundle
+ingress:
+  selector: whitelist-rule
+  namespace: default
+
