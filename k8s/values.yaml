@@ -1,0 +1,9 @@
+config:
+  namespace: kube-system
+  map: addon-http-application-routing-nginx-configuration
+ingress:
+  selector: whitelist-rule
+  namespace: default
+bundle:
+  name: ca-bundle
+  namespace: default
