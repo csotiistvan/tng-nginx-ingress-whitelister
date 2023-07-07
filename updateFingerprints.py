@@ -19,7 +19,7 @@ else:
     newBlock = "\n"+ seperator +"\n + data + "\n" + seperator+"\n"
     if "http-snippet" in cmap.data:
         existingconfig = cmap.data["http-snippet"]
-        map = existingconfig.split("seperator")
+        map = existingconfig.split(seperator)
         cmap.data["http-snippet"] = map[0].strip()+ newBlock + map[2].strip()
     else:
         cmap.data["http-snippet"] = newBlock
