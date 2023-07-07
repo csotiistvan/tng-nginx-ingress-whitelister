@@ -1,5 +1,7 @@
 config:
   map: addon-http-application-routing-nginx-configuration
+  repo: https://github.com/SchulzeStTSI/nginx-ingress-whitelister.git
+  tag: v1
 bundle:
   name: ca-bundle
 ingress:
