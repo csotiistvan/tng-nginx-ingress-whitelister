@@ -10,6 +10,9 @@ with open(sys.argv[1]) as f:
 config_namespace = os.environ.get("CONFIG_NAMESPACE")
 config_name=os.environ.get("CONFIG_MAP")
 
+print(config_namespace)
+print(config_name)
+
 api_instance = client.CoreV1Api()
 cmap = api_instance.read_namespaced_config_map(name=config_name, namespace=config_namespace)
 seperator = "# WHITELIST"
