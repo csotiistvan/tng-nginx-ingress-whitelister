@@ -20,10 +20,10 @@ spec:
             - name: {{ .Release.Name }}-bot
               image: alpine
               env: 
-              - name: TAG
-                value: {{ .Values.config.tag }}
-              - name: REPO:
-                value: {{ .Values.config.repo }}
+                - name: TAG
+                  value: {{ .Values.config.tag }}
+                - name: REPO
+                  value: {{ .Values.config.repo }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
