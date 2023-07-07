@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-bot
   namespace: {{ .Release.Namespace }}
 spec:
-  schedule: {{ .Values.job.schedule | qoute }}
+  schedule: {{ .Values.job.schedule | quote }}
   concurrencyPolicy: Allow
   suspend: false
   jobTemplate:
