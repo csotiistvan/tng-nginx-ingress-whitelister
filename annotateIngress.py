@@ -18,4 +18,4 @@ if ingress:
    ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"] = "on"
    api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
 else: 
-   print("Ingress Rule is not existing in the namespace").
+   print("Ingress Rule is not existing in the namespace")
