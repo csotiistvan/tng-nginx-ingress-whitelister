@@ -12,4 +12,4 @@ cmap = client.V1ConfigMap()
 cmap.data = {}
 cmap.data["http-snippet"] = data
 
-api_instance.patch_namespaced_config_map(namespace=os.environ.get("CONFIGMAPNAMESPACE"),name=os.environ.get("CONFIGMAPNAME"), body=cmap)
+api_instance.patch_namespaced_config_map(namespace=os.environ.get("CONFIG_NAMESPACE"),name=os.environ.get("CONFIG_MAP"), body=cmap)
