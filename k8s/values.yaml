@@ -9,4 +9,6 @@ bundle:
 ingress:
   name: whitelist-rule
   namespace: default
+job: 
+  schedule: '*/1 * * * *'
 
