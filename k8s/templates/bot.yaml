@@ -36,7 +36,7 @@ spec:
                 - name: BUNDLE_NAME
                   value: {{ .Release.Name }}-{{ .Values.bundle.name }}
                 - name: SEPERATOR
-                  value: {{ .Values.config.seperator }}
+                  value: {{ quote .Values.config.seperator }}
                 - name: INGRESS_SELECTOR
                   value: {{ .Values.ingress.selector }}
                 - name: INGRESS_NAMESPACE
