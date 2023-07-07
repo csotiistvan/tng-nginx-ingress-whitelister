@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.ingress.namespace}}
 subjects:
   - kind: ServiceAccount
-    name: {{ .Release.Name }}-ingress-rule-service-account
+    name: {{ .Release.Name }}-service-account
     namespace: {{ .Values.ingress.namespace}}
 roleRef:
   kind: Role
