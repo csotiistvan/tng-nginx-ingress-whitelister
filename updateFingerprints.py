@@ -18,7 +18,7 @@ if "http-snippet" in cmap.data:
     existingconfig = cmap.data["http-snippet"]
     map = existingconfig.split("seperator")
     cmap.data["http-snippet"] = map[0]+ newBlock + map[2]
-else
+else:
     cmap.data["http-snippet"] = newBlock
 
 api_instance.patch_namespaced_config_map(namespace=config_namespace,name=config_name, body=cmap)
