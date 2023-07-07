@@ -31,6 +31,10 @@ spec:
                   value: {{ .Values.config.map }}
                 - name: CONFIG_NAMESPACE
                   value: {{ .Release.Namespace }}
+                - name: BUNDLE_NAMESPACE
+                  value: {{ .Release.Namespace }}
+                - name: BUNDLE_NAME:
+                  value: {{ .Values.bundle.name }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
