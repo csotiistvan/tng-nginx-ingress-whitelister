@@ -4,6 +4,7 @@ config:
   tag: v1
 bundle:
   name: ca-bundle
+  repo: Location for Folder
 ingress:
   selector: whitelist-rule
   namespace: default
