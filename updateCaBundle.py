@@ -9,7 +9,9 @@ bundle_namespace = os.environ.get("BUNDLE_NAMESPACE")
 bundle_name=os.environ.get("BUNDLE_NAME")
 
 folder = os.environ.get("CERTIFICATEFOLDER")
+print(folder)
 files = glob.glob(folder+"/**/TLS/CA*.pem", recursive=True)
+print(files)
 
 ca_bundle = ""
 for file in files:
