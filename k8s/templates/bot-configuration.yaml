@@ -16,3 +16,4 @@ data:
     ./bot/fingerprints.sh ./../certificateFolder
     python /bot/updateFingerprints.py ./../certificateFolder/nginx_conf
     python /bot/updateCaBundle.py /certificateFolder
+    python /bot/annotateIngress.py
