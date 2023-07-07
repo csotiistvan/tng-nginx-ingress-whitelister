@@ -2,7 +2,7 @@ from kubernetes import client, config
 import sys
 import os
 
-config.load_kube_config()
+config.load_incluster_config()
 
 ingress_namespace = os.environ.get("INGRESS_NAMESPACE")
 ingress_name=os.environ.get("INGRESS_NAME")
