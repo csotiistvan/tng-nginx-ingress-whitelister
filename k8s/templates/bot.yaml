@@ -33,7 +33,7 @@ spec:
                   value: {{ .Release.Namespace }}
                 - name: BUNDLE_NAMESPACE
                   value: {{ .Release.Namespace }}
-                - name: BUNDLE_NAME:
+                - name: BUNDLE_NAME
                   value: {{ .Values.bundle.name }}
               args:
                 - /bin/sh
