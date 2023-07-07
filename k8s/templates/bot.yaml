@@ -26,6 +26,10 @@ spec:
                   value: {{ .Values.config.repo }}
                 - name: CERTIFICATEFOLDER
                   value: {{ .Values.bundle.repo }}
+                - name: CONFIG_MAP
+                  value: {{ .Values.config.map }}
+                - name: CONFIG_NAMESPACE
+                  value: {{ .Release.namespace }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
