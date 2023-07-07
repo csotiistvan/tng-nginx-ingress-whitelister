@@ -16,11 +16,11 @@ else:
     api_instance = client.CoreV1Api()
     cmap = api_instance.read_namespaced_config_map(name=config_name, namespace=config_namespace)
     seperator = "# WHITELIST"
-    newBlock = "\n"+ seperator + data + "\n" + seperator
+    newBlock = "\n"+ seperator +"\n + data + "\n" + seperator+"\n"
     if "http-snippet" in cmap.data:
         existingconfig = cmap.data["http-snippet"]
         map = existingconfig.split("seperator")
-        cmap.data["http-snippet"] = map[0]+ newBlock + map[2]
+        cmap.data["http-snippet"] = map[0].strip()+ newBlock + map[2].strip()
     else:
         cmap.data["http-snippet"] = newBlock
         
