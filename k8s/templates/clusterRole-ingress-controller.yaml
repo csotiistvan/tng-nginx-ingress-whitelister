@@ -12,7 +12,7 @@ rules:
         "authorization.k8s.io",
       ]
     resources: ["secrets"]
-    resourceNames: [{{ .Values.bundle.name}}]
+    resourceNames: [ {{ .Release.Name }}-{{ .Values.bundle.name }}]
     verbs: ["get", "watch", "list", "create", "delete", "patch"]
   - apiGroups:
       [
