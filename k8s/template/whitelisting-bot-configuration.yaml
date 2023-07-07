@@ -1,8 +1,8 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: whitelisting-bot-config
-  namespace: default
+  name: {{ .Release.Name }}-bot-config
+  namespace: {{ .Release.Namespace }}
 data:
   script.sh: |
     #!/bin/sh
