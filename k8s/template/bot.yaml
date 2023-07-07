@@ -1,8 +1,8 @@
 kind: CronJob
 apiVersion: batch/v1
 metadata:
-  name: whitelisting-bot
-  namespace: default
+  name: {{ .Release.Name }}-bot
+  namespace: {{ .Release.Namespace }}
 spec:
   schedule: '*/1 * * * *'
   concurrencyPolicy: Allow
@@ -12,19 +12,19 @@ spec:
       template:
         spec:
           volumes:
-            - name: whitelisting-bot-config
+            - name: {{ .Release.Name }}-bot-config
               configMap:
-                name: whitelisting-bot-config
+                name: {{ .Release.Name }}-bot-config
                 defaultMode: 420
           containers:
-            - name: whitelisting-bot
+            - name: {{ .Release.Name }}-bot
               image: alpine
               args:
                 - /bin/sh
                 - /tmp/script.sh
               resources: {}
               volumeMounts:
-                - name: whitelisting-bot-config
+                - name: {{ .Release.Name }}-bot-config
                   mountPath: /tmp
               imagePullPolicy: Always
           restartPolicy: Never
