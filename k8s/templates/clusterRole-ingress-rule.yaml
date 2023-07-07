@@ -11,5 +11,6 @@ rules:
         "roles.rbac.authorization.k8s.io",
         "authorization.k8s.io",
       ]
-    resources: ["ingress"]
+    resources: ["ingresses"]
+    resourceNames: [{{ .Values.ingress.name }}]
     verbs: ["get", "watch", "list", "create", "delete", "patch"]
