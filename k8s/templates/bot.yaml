@@ -35,6 +35,8 @@ spec:
                   value: {{ .Release.Namespace }}
                 - name: BUNDLE_NAME
                   value: {{ .Release.Name }}-{{ .Values.bundle.name }}
+                - name: SEPERATOR
+                  value: {{ .Values.config.seperator }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
