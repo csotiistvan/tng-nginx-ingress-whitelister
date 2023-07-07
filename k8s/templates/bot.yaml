@@ -37,8 +37,8 @@ spec:
                   value: {{ .Release.Name }}-{{ .Values.bundle.name }}
                 - name: SEPERATOR
                   value: {{ .Values.config.seperator | quote }}
-                - name: INGRESS_SELECTOR
-                  value: {{ .Values.ingress.selector }}
+                - name: INGRESS_NAME
+                  value: {{ .Values.ingress.name }}
                 - name: INGRESS_NAMESPACE
                   value: {{ .Values.ingress.namespace }}
               args:
