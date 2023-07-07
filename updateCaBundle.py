@@ -7,10 +7,8 @@ config.load_incluster_config()
 
 bundle_namespace = os.environ.get("BUNDLE_NAMESPACE")
 bundle_name=os.environ.get("BUNDLE_NAME")
+files = glob.glob("./certificateFolder/**/TLS/CA*.pem", recursive=True)
 
-folder = os.environ.get("CERTIFICATEFOLDER")
-print(folder)
-files = glob.glob(folder+"/**/TLS/CA*.pem", recursive=True)
 print(files)
 
 ca_bundle = ""
