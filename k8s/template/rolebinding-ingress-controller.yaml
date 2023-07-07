@@ -5,9 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 subjects:
   - kind: ServiceAccount
-    name: {{ .Release.Name }}-service-account
+    name: {{ .Release.Name }}-ingress-controller-service-account
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: {{ .Release.Name }}-role
+  name: {{ .Release.Name }}-ingress-controller-role
   apiGroup: rbac.authorization.k8s.io
