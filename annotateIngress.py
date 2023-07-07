@@ -9,4 +9,11 @@ ingress_name=os.environ.get("INGRESS_NAME")
 
 api_instance = client.NetworkingV1Api()
 ingress = api_instance.read_namespaced_ingress(name=ingress_name,namespace=ingress_namespace)
-print(ingress)
+
+if ingress:
+   ingress["metadata"]["annotations"]["nginx.ingress.kubernetes.io/server-snippet"] = "if ($reject) { return 403; }"
+   api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, ingress)
+  
+
+
+
