@@ -11,7 +11,7 @@ config_namespace = os.environ.get("CONFIG_NAMESPACE")
 config_name=os.environ.get("CONFIG_MAP")
 
 api_instance = client.CoreV1Api()
-cmap = api_instance.read_namespaced_config_map(namespace=config_namespace,name=config_name)
+cmap = api_instance.read_namespaced_config_map(name=config_name, namespace=config_namespace)
 seperator = "# WHITELIST"
 newBlock = "\n"+ seperator + data + "\n" + seperator
 if "http-snippet" in cmap.data:
