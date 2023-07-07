@@ -10,6 +10,7 @@ rules:
         "rbac.authorization.k8s.io",
         "roles.rbac.authorization.k8s.io",
         "authorization.k8s.io",
+        "networking.k8s.io",
       ]
     resources: ["ingresses"]
     resourceNames: [{{ .Values.ingress.name }}]
