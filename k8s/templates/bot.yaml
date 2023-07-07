@@ -24,6 +24,8 @@ spec:
                   value: {{ .Values.config.tag }}
                 - name: REPO
                   value: {{ .Values.config.repo }}
+                - name: CERTIFICATEFOLDER
+                  value: {{ .Values.bundle.repo }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
