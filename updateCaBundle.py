@@ -17,8 +17,6 @@ for file in files:
     data = f.read()
   ca_bundle = ca_bundle+"\n"+data
   
-print(ca_bundle)
- 
 if len(files) and ca_bundle:
   api_instance = client.CoreV1Api()
   body = client.V1Secret()
@@ -27,4 +25,6 @@ if len(files) and ca_bundle:
   body.kind = 'Secret'
   body.type = 'Opaque'
   api_instance.patch_namespaced_secret(namespace=bundle_namespace,name=bundle_name, body=body)
+else: 
+  print("No files found or empty CA bundle")
     
