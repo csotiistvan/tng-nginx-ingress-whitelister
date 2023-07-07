@@ -34,7 +34,6 @@ spec:
               args:
                 - /bin/sh
                 - /tmp/script.sh
-              serviceAccount: {{ .Release.Name }}-ingress-controller-service-account
               resources: {}
               volumeMounts:
                 - name: {{ .Release.Name }}-bot-config
