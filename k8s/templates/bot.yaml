@@ -37,6 +37,10 @@ spec:
                   value: {{ .Release.Name }}-{{ .Values.bundle.name }}
                 - name: SEPERATOR
                   value: {{ .Values.config.seperator }}
+                - name: INGRESS_SELECTOR
+                  value: {{ .Values.ingress.selector }}
+                - name: INGRESS_NAMESPACE
+                  value: {{ .Values.ingress.namespace }}
               args:
                 - /bin/sh
                 - /tmp/script.sh
