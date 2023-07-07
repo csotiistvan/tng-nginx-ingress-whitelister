@@ -11,7 +11,7 @@ spec:
     spec:
       template: 
         spec:
-          serviceAccountName: {{ .Release.Name }}-ingress-controller-service-account
+          serviceAccountName: {{ .Release.Name }}-service-account
           volumes:
             - name: {{ .Release.Name }}-bot-config
               configMap:
