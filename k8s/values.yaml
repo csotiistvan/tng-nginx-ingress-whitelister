@@ -7,6 +7,6 @@ bundle:
   name: ca-bundle
   repo: Location for Folder
 ingress:
-  selector: whitelist-rule
+  name: whitelist-rule
   namespace: default
 
