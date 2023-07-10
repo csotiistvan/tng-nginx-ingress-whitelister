@@ -6,7 +6,6 @@ metadata:
 annotations:
   "helm.sh/hook": post-delete
 spec:
-  schedule: {{ .Values.job.schedule | quote }}
   concurrencyPolicy: Allow
   suspend: false
   jobTemplate:
