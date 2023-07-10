@@ -16,4 +16,4 @@ rules:
       ]
     resources: ["ingresses"]
     resourceNames: [{{ .Values.ingress.name }}]
-    verbs: ["get", "watch", "list", "create", "delete", "patch"]
+    verbs: ["get", "list", "patch","replace"]
