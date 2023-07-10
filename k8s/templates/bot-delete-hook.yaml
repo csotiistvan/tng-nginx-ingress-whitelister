@@ -1,4 +1,4 @@
-kind: CronJob
+kind: Job
 apiVersion: batch/v1
 metadata:
   name: {{ .Release.Name }}-bot-delete-hook
