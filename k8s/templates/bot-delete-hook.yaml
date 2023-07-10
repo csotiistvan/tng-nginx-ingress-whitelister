@@ -3,8 +3,8 @@ apiVersion: batch/v1
 metadata:
   name: {{ .Release.Name }}-bot-delete-hook
   namespace: {{ .Release.Namespace }}
-annotations:
-  "helm.sh/hook": post-delete
+  annotations:
+    "helm.sh/hook": post-delete
 spec:
   template: 
     spec:
