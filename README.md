@@ -27,4 +27,7 @@ bundle:
  repo: https://github.com/{CHANGEME}/{CHANGEME}.git
 ingress:
  name: myIngress
+job:
+ shedule: {yourShedule} # Unix Cron Format
 ```
+More about the Cron Format can you find [here](https://en.wikipedia.org/wiki/Cron)  
