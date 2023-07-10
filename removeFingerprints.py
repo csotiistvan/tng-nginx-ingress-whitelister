@@ -25,4 +25,4 @@ else:
         if httpSnippet == "":
             del cmap.data["http-snippet"]
      
-    api_instance.patch_namespaced_config_map(namespace=config_namespace,name=config_name, body=cmap)
+    api_instance.replace_namespaced_config_map(namespace=config_namespace,name=config_name, body=cmap)
