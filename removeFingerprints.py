@@ -19,5 +19,10 @@ else:
         map = existingconfig.split(seperator)
         if len(map) == 3:
           cmap.data["http-snippet"] = map[0].strip() + map[2].strip()
+
+        httpSnippet = cmap.data["http-snippet"].strip()
+
+        if httpSnippet == "":
+            del cmap.data["http-snippet"]
      
     api_instance.patch_namespaced_config_map(namespace=config_namespace,name=config_name, body=cmap)
