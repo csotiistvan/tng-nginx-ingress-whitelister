@@ -21,10 +21,6 @@ spec:
                   value: {{ .Values.config.tag }}
                 - name: REPO
                   value: {{ .Values.config.repo }}
-                - name: CERTIFICATEFOLDER
-                  value: {{ .Values.bundle.repo }}
-                - name: CONFIG_MAP
-                  value: {{ .Values.config.map }}
                 - name: CONFIG_NAMESPACE
                   value: {{ .Release.Namespace }}
                 - name: BUNDLE_NAMESPACE
