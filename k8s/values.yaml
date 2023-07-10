@@ -2,7 +2,7 @@ config:
   map: addon-http-application-routing-nginx-configuration
   repo: https://github.com/SchulzeStTSI/nginx-ingress-whitelister.git
   tag: v1
-  seperator: "---- WHITELIST ----"
+  seperator: "#---- WHITELIST ----"
 bundle:
   name: ca-bundle
   repo: Location for Folder
