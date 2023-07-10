@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-bot-delete-hook
   namespace: {{ .Release.Namespace }}
   annotations:
-    "helm.sh/hook": post-delete
+    "helm.sh/hook": pre-delete
 spec:
   template: 
     spec:
