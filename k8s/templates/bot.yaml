@@ -3,9 +3,6 @@ apiVersion: batch/v1
 metadata:
   name: {{ .Release.Name }}-bot
   namespace: {{ .Release.Namespace }}
-annotations:
-  "helm.sh/hook": pre-delete
-  "helm.sh/hook-weight": "-5"
 spec:
   schedule: {{ .Values.job.schedule | quote }}
   concurrencyPolicy: Allow
