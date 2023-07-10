@@ -1,0 +1,43 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: {{ .Release.Name }}-bot-delete-hook
+  namespace: {{ .Release.Namespace }}
+annotations:
+  "helm.sh/hook": post-delete
+spec:
+  schedule: {{ .Values.job.schedule | quote }}
+  concurrencyPolicy: Allow
+  suspend: false
+  jobTemplate:
+    spec:
+      template: 
+        spec:
+          serviceAccountName: {{ .Release.Name }}-service-account
+          containers:
+            - name: {{ .Release.Name }}-bot
+              image: alpine
+              env: 
+                - name: TAG
+                  value: {{ .Values.config.tag }}
+                - name: REPO
+                  value: {{ .Values.config.repo }}
+                - name: CERTIFICATEFOLDER
+                  value: {{ .Values.bundle.repo }}
+                - name: CONFIG_MAP
+                  value: {{ .Values.config.map }}
+                - name: CONFIG_NAMESPACE
+                  value: {{ .Release.Namespace }}
+                - name: BUNDLE_NAMESPACE
+                  value: {{ .Release.Namespace }}
+                - name: BUNDLE_NAME
+                  value: {{ .Release.Name }}-{{ .Values.bundle.name }}
+                - name: SEPERATOR
+                  value: {{ .Values.config.seperator | quote }}
+                - name: INGRESS_NAME
+                  value: {{ .Values.ingress.name }}
+                - name: INGRESS_NAMESPACE
+                  value: {{ .Values.ingress.namespace }}
+              command": ["sh", "-c", "apk add --update py-pip	> /dev/null;apk add --update py-pip	> /dev/null;apk add --update git > /dev/null; apk add --update bash > /dev/null;git clone $REPO --branch $TAG bot;  pip install -r /bot/requirements.txt > /dev/null;python /bot/removeFingerprints.py; python /bot/removeCaBundle.py;python /bot/removeIngressAnnotation.py"],
+              imagePullPolicy: Always
+          restartPolicy: Never
