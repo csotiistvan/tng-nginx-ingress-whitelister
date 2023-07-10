@@ -10,7 +10,7 @@ spec:
     spec:
       serviceAccountName: {{ .Release.Name }}-service-account
       containers:
-        - name: {{ .Release.Name }}-bot
+        - name: {{ .Release.Name }}-bot-delete-hook
           image: alpine
           env: 
             - name: TAG
