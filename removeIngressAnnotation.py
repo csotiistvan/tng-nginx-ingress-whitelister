@@ -11,9 +11,9 @@ api_instance = client.NetworkingV1Api()
 ingress = api_instance.read_namespaced_ingress(name=ingress_name,namespace=ingress_namespace)
 
 if ingress:
-   ingress.metadata.annotations["nginx.ingress.kubernetes.io/server-snippet"].pop()
-   ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-secret"].pop()
-   ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"].pop()
+   del ingress.metadata.annotations["nginx.ingress.kubernetes.io/server-snippet"]
+   del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-secret"]
+   del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"]
    api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
 else: 
    print("Ingress Rule is not existing in the namespace")
