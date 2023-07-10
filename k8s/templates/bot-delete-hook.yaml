@@ -19,6 +19,8 @@ spec:
               value: {{ .Values.config.repo }}
             - name: CONFIG_NAMESPACE
               value: {{ .Release.Namespace }}
+            - name: CONFIG_MAP
+              value: {{ .Values.config.map }}
             - name: BUNDLE_NAMESPACE
               value: {{ .Release.Namespace }}
             - name: BUNDLE_NAME
