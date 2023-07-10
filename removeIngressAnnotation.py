@@ -15,7 +15,7 @@ if ingress:
       del ingress.metadata.annotations["nginx.ingress.kubernetes.io/server-snippet"]
    if ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-secret"]:
       del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-secret"]
-   if del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"]:
+   if ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"]:
       del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"]
    api_instance.replace_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
 else: 
