@@ -14,7 +14,6 @@ if ingress:
    del ingress.metadata.annotations["nginx.ingress.kubernetes.io/server-snippet"]
    del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-secret"]
    del ingress.metadata.annotations["nginx.ingress.kubernetes.io/auth-tls-verify-client"]
-   print(ingress)
-   api_instance.patch_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
+   api_instance.replace_namespaced_ingress(name=ingress_name,namespace=ingress_namespace, body=ingress)
 else: 
    print("Ingress Rule is not existing in the namespace")
