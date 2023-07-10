@@ -24,4 +24,4 @@ rules:
       ]
     resources: ["configmaps"]
     resourceNames: [{{ .Values.config.map}}]
-    verbs: ["get", "list", "patch", "replace"]
+    verbs: ["get", "list", "patch", "update"]
